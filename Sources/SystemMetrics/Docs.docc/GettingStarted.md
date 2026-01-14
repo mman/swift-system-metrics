@@ -34,7 +34,7 @@ You can configure the polling interval with your own ``SystemMetricsMonitor/Conf
 
 ```swift
 let systemMetricsMonitor = SystemMetricsMonitor(
-    configuration: .init(pollInterval: .seconds(5)),
+    configuration: .init(pollInterval: .seconds(30)),
     logger: logger
 )
 ```
@@ -44,7 +44,7 @@ let systemMetricsMonitor = SystemMetricsMonitor(
 Use [Swift Service Lifecycle](https://github.com/swift-server/swift-service-lifecycle) to run the monitor as a background service with support for graceful shutdown and UNIX signal handling.
 To do so, include the system metrics monitor you created in a service group and run the group in your application.
 
-The following code bootstraps your own metrics backend, creates a system metrics monitor, and uses service lifecycle to run both: 
+The following code bootstraps your own metrics backend, creates a system metrics monitor, and uses service lifecycle to run both:
 
 ```swift
 import SystemMetrics

@@ -53,7 +53,7 @@ struct Application {
         // Create a service simulating some important work
         let service = FooService(logger: logger)
         let systemMetricsMonitor = SystemMetricsMonitor(
-            configuration: .init(pollInterval: .seconds(5)),
+            configuration: .init(pollInterval: .seconds(30)),
             logger: logger
         )
 

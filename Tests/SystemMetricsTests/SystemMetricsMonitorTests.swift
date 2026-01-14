@@ -291,7 +291,7 @@ struct SystemMetricsMonitorTests {
         // Wait for the monitor to run a few times
         #expect(
             try await wait(
-                noLongerThan: .seconds(2.0),
+                noLongerThan: .seconds(15.0),
                 for: {
                     await provider.getCallCount() >= 3
                 },

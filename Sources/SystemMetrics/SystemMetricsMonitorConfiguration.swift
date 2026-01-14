@@ -22,7 +22,7 @@ extension SystemMetricsMonitor {
 
         /// The interval between system metrics data scraping.
         ///
-        /// The default interval is 2 seconds.
+        /// The default interval is 15 seconds.
         public var interval: Duration
 
         /// String labels associated with the metrics
@@ -34,9 +34,9 @@ extension SystemMetricsMonitor {
         /// Create new monitor configuration.
         ///
         /// - Parameters:
-        ///     - interval: The interval at which system metrics should be updated, defaults to 2 seconds.
+        ///     - interval: The interval at which system metrics should be updated, defaults to 15 seconds.
         public init(
-            pollInterval interval: Duration = .seconds(2)
+            pollInterval interval: Duration = .seconds(15)
         ) {
             self.interval = interval
             self.labels = .init()
@@ -50,7 +50,7 @@ extension SystemMetricsMonitor {
         ///     - labels: The labels to use for generated system metrics.
         ///     - dimensions: The dimensions to include in generated system metrics.
         package init(
-            pollInterval interval: Duration = .seconds(2),
+            pollInterval interval: Duration = .seconds(15),
             labels: Labels,
             dimensions: [(String, String)] = []
         ) {
