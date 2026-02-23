@@ -26,10 +26,10 @@ extension SystemMetricsMonitor {
         public var interval: Duration
 
         /// String labels associated with the metrics
-        package let labels: SystemMetricsMonitor.Configuration.Labels
+        public let labels: SystemMetricsMonitor.Configuration.Labels
 
         /// Additional dimensions attached to every metric
-        package let dimensions: [(String, String)]
+        public let dimensions: [(String, String)]
 
         /// Create new monitor configuration.
         ///
@@ -49,7 +49,7 @@ extension SystemMetricsMonitor {
         ///     - interval: The interval at which system metrics should be updated.
         ///     - labels: The labels to use for generated system metrics.
         ///     - dimensions: The dimensions to include in generated system metrics.
-        package init(
+        public init(
             pollInterval interval: Duration = .seconds(15),
             labels: Labels,
             dimensions: [(String, String)] = []
@@ -66,7 +66,7 @@ extension SystemMetricsMonitor.Configuration {
     ///
     /// Backend implementations can provide a static extension with
     /// defaults that suit their specific backend needs.
-    package struct Labels: Sendable {
+    public struct Labels: Sendable {
         /// Prefix for all other labels.
         package var prefix: String = "process_"
         /// Label for virtual memory size in bytes.
@@ -92,7 +92,7 @@ extension SystemMetricsMonitor.Configuration {
 
         /// Create a new `Labels` instance with default values.
         ///
-        package init() {
+        public init() {
         }
 
         /// Create a new `Labels` instance.
@@ -105,7 +105,7 @@ extension SystemMetricsMonitor.Configuration {
         ///     - cpuSecondsTotal: Label for total user and system CPU time spent in seconds.
         ///     - maxFileDescriptors: Label for maximum number of open file descriptors.
         ///     - openFileDescriptors: Label for number of open file descriptors.
-        package init(
+        public init(
             prefix: String,
             virtualMemoryBytes: String,
             residentMemoryBytes: String,
